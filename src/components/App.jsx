@@ -1,9 +1,10 @@
-import { Statistics } from './Viget';
-import { FeedbackOptions } from './Viget';
-import { Section } from './Viget';
-import { Notification } from './Viget';
+import { Statistics } from './statistics/Statistics';
+import { FeedbackOptions } from './feedback/FeedbackOptions';
+import { Section } from './section/Section';
+import { Notification } from './notification/Notification';
 import css from './Viget.module.css';
 import { useState } from 'react';
+
 export const App = () => {
   const [feedback, setFeedback] = useState({
     good: 0,
@@ -27,7 +28,7 @@ export const App = () => {
 
   return (
     <div className={css.feedback}>
-      <Section>
+      <Section title="Please leave feedback">
         <FeedbackOptions options={options} onLeaveFeedback={handleFeedback} />
       </Section>
 
